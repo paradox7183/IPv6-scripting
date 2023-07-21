@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+RED="31"
+GREEN="32"
+BOLDGREEN="\e[1;${GREEN}m"
+ITALICRED="\e[3;${RED}m"
+ENDCOLOR="\e[0m"
+
+echo -e  "${BOLDGREEN}Enabling IPv6${ENDCOLOR}"
+sysctl -w net.ipv6.conf.all.disable_ipv6=0
+sysctl -w net.ipv6.conf.default.disable_ipv6=0
+echo -e  "${ITALICRED}IPv6 enabled!!${ENDCOLOR}"
+ip a
+echo -e "${ITALICRED}If your not able to see inet6, ipv6 isnt on!${ENDCOLOR}"
+
